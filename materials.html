@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials - Stone Supplier</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f2f2f2;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #333;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .logo {
+            color: #ffcc00;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* PAGE TITLE */
+        .heading {
+            text-align: center;
+            padding: 25px;
+            background: #222;
+            color: white;
+            font-size: 30px;
+        }
+
+        /* MATERIAL GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        /* MATERIAL CARD */
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Stone Supplier</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="materials.html"class="active">Materials</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="price.html">Price</a>
+            <a href="order.html">Order</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- PAGE TITLE -->
+    <div class="heading">Our Materials</div>
+
+    <!-- MATERIALS GRID -->
+    <div class="grid">
+
+        <div class="card">
+            <img src="20mm.jpg" alt="20mm Aggregate">
+            <h3>20mm Aggregate</h3>
+            <div class="desc">Best for RCC, slabs, and beams.</div>
+        </div>
+
+        <div class="card">
+            <img src="40mm.jpg" alt="40mm Aggregate">
+            <h3>40mm Aggregate</h3>
+            <div class="desc">Used for mass concreting.</div>
+        </div>
+
+        <div class="card">
+            <img src="dust.jpg" alt="Crusher Dust">
+            <h3>Crusher Dust</h3>
+            <div class="desc">Good for flooring and leveling layers.</div>
+        </div>
+
+        <div class="card">
+            <img src="GSB.jpg" alt="GSB Material">
+            <h3>GSB Material</h3>
+            <div class="desc">Used for filling and leveling.</div>
+        </div>
+
+        <div class="card">
+            <img src="Sand.jpg" alt="M-Sand / River Sand">
+            <h3>M-Sand / River Sand</h3>
+             <div class="desc">Smooth sand ideal for plastering.</div>
+            </div>
+           <div class="card">
+            <img src="Bricks.jpg" alt="Bricks">
+            <h3>Bricks</h3>
+            <div class="desc">Good quality red bricks.</div>
+        </div>
+
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Sai Krushna Stone & Aggregate Suppliers – All Rights Reserved.
+    </footer>
+
+</body>
+</html>

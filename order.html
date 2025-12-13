@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Materials - Stone Supplier</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: #f4f4f4;
+        }
+
+        /* NAVIGATION */
+        nav{
+            background: #333;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo{
+            color: #ffcc00;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a{
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav a:hover{
+            color: #ffcc00;
+        }
+
+        /* BANNER */
+        .banner{
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 32px;
+        }
+
+        /* FORM BOX */
+        .container{
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        label{
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        select, input, textarea{
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        textarea{
+            height: 120px;
+            resize: none;
+        }
+
+        .btn{
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .email-btn{
+            background: #333;
+            color: white;
+        }
+
+        .email-btn:hover{
+            background: #ffcc00;
+            color: #333;
+        }
+
+        .wa-btn{
+            background: #25D366;
+            color: white;
+        }
+
+        .wa-btn:hover{
+            background: #1ebc5a;
+        }
+
+        footer{
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Stone Supplier</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="materials.html">Materials</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="price.html">Price</a>
+            <a href="order.html"class="active">Order</a>
+            <a href="contact.html">Contact</a>
+                   </div>
+    </nav>
+
+    <!-- BANNER -->
+    <div class="banner">Order Construction Materials</div>
+
+    <!-- ORDER FORM -->
+    <div class="container">
+
+        <!-- EMAIL FORM -->
+        <form action="https://formsubmit.co/gaikwadshailesh8622@gmail.com" method="POST">
+
+            <!-- REQUIRED HIDDEN FIELDS -->
+            <input type="hidden" name="_subject" value="New Material Order">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <label>Material</label>
+            <select name="Material">
+                <option>20mm Aggregate</option>
+                <option>40mm Aggregate</option>
+                <option>Crusher Dust</option>
+                <option>M-Sand</option>
+                <option>River Sand</option>
+                <option>Bricks</option>
+                <option>Cement</option>
+                <option>Murum</option>
+            </select>
+
+            <label>Quantity</label>
+            <input type="text" name="Quantity" placeholder="Eg: 2 Brass, 100 CFT">
+
+            <label>Your Name</label>
+            <input type="text" name="Customer Name" placeholder="Enter your name">
+
+            <label>Mobile Number</label>
+            <input type="tel" name="Mobile Number" placeholder="Enter mobile number">
+
+            <label>Delivery Address</label>
+            <textarea name="Delivery Address" placeholder="Enter delivery location"></textarea>
+
+            <!-- EMAIL BUTTON -->
+            <button type="submit" class="btn email-btn">
+                Submit Order via Email
+            </button>
+
+            <!-- WHATSAPP BUTTON -->
+            <button type="button" class="btn wa-btn" onclick="sendWhatsApp()">
+                Send Order via WhatsApp
+            </button>
+
+        </form>
+    </div>
+
+    <footer>
+        © 2025 Stone Supplier | All Rights Reserved
+    </footer>
+
+    <!-- WHATSAPP SCRIPT -->
+    <script>
+        function sendWhatsApp(){
+            let material = document.querySelector("select").value;
+            let quantity = document.querySelector("input[name='Quantity']").value;
+            let name = document.querySelector("input[name='Customer Name']").value;
+            let phone = document.querySelector("input[name='Mobile Number']").value;
+            let address = document.querySelector("textarea").value;
+
+            let message =
+                `New Order%0A
+Material: ${material}%0A
+Quantity: ${quantity}%0A
+Name: ${name}%0A
+Mobile: ${phone}%0A
+Address: ${address}`;
+
+            window.open(
+                `https://wa.me/8484998361?text=${message}`,
+                "_blank"
+            );
+        }
+    </script>
+
+</body>
+</html>

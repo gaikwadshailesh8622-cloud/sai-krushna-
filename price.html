@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Supplier | Price List</title>
+
+    <style>
+        /* RESET */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* NAVIGATION */
+        nav{
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo{
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li{
+            margin-left: 25px;
+        }
+
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active{
+            color: #ffcc00;
+        }
+
+        /* PAGE BANNER */
+        .banner{
+            width: 100%;
+            height: 220px;
+            background: #444;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner h1{
+            font-size: 40px;
+        }
+
+        /* MAIN CONTAINER */
+        .container{
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* PRICE TABLE */
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+        }
+
+        th, td{
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        th{
+            background: #333;
+            color: white;
+        }
+
+        tr:hover{
+            background: #f0e6d2;
+        }
+
+        .price{
+            font-weight: bold;
+            color: #d99000;
+        }
+
+        /* FOOTER */
+        footer{
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Stone Supplier</div>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="materials.html">Materials</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="price.html" class="active">Price</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE BANNER -->
+    <section class="banner">
+        <h1>Material Price List</h1>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="container">
+        <h2 class="title">Updated Price Chart</h2>
+
+        <table>
+            <tr>
+                <th>Material Name</th>
+                <th>Price</th>
+                <th>Unit</th>
+            </tr>
+
+            <tr>
+                <td>20mm Aggregate</td>
+                <td class="price">₹2000</td>
+                <td>Per Brass</td>
+            </tr>
+
+            <tr>
+                <td>40mm Aggregate</td>
+                <td class="price">₹2200</td>
+                <td>Per Brass</td>
+            </tr>
+
+            <tr>
+                <td>River Sand</td>
+                <td class="price">₹5000</td>
+                <td>Per Brass</td>
+            </tr>
+
+            <tr>
+                <td>M-Sand</td>
+                <td class="price">₹7000</td>
+                <td>Per Brass</td>
+            </tr>
+
+            <tr>
+                <td>Bricks</td>
+                <td class="price">₹8</td>
+                <td>Per Piece</td>
+            </tr>
+
+            <tr>
+                <td>Cement (OPC/PPC)</td>
+                <td class="price">₹310</td>
+                <td>Per Bag</td>
+            </tr>
+
+            <tr>
+                <td>Murum / Soil</td>
+                <td class="price">₹1000</td>
+                <td>Per Brass</td>
+            </tr>
+
+            <tr>
+                <td>Crusher Dust</td>
+                <td class="price">₹2500</td>
+                <td>Per Brass</td>
+            </tr>
+
+            <tr>
+                <td>Other Stones</td>
+                <td class="price">Varies</td>
+                <td>Depends on Type</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        © 2025 Sai Krushna Stone Supplier | All Rights Reserved
+    </footer>
+
+</body>
+</html>

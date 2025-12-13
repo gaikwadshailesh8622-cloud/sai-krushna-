@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Supplier | Gallery</title>
+
+    <style>
+        /* RESET */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* NAVIGATION BAR */
+        nav{
+            width: 100%;
+            background: #333;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo{
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li{
+            margin-left: 25px;
+        }
+
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active{
+            color: #ffcc00;
+        }
+
+        /* BANNER */
+        .banner{
+            width: 100%;
+            height: 250px;
+            background: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .banner h1{
+            font-size: 40px;
+        }
+
+        /* GALLERY GRID */
+        .container{
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .photo{
+            width: 100%;
+            height: 230px;
+            background: #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+            transition: 0.3s ease-in-out;
+        }
+
+        .photo img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo:hover{
+            transform: scale(1.05);
+        }
+
+        /* FOOTER */
+        footer{
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Stone Supplier</div>
+
+        <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="materials.html">Materials</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="price.html">Price</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE BANNER -->
+    <section class="banner">
+        <h1>Gallery</h1>
+    </section>
+
+    <!-- GALLERY IMAGES -->
+    <div class="container">
+        <h2 class="title">Our Trucks and Sites</h2>
+
+        <div class="grid">
+
+            <!-- Replace the src paths with your own image files -->
+            <div class="photo"><img src="gallery1.jpg" alt="Material Image"></div>
+            <div class="photo"><img src="gallery2.jpg" alt="Material Image"></div>
+            <div class="photo"><img src="gallery3.jpg" alt="Material Image"></div>
+            <div class="photo"><img src="gallery6.jpg" alt="Material Image"></div>
+           <div class="photo"><img src="House1.jpg" alt="Material Image"></div>
+           <div class="photo"><img src="House2.jpg" alt="Material Image"></div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Sai Krushna Stone Supplier | All Rights Reserved
+    </footer>
+
+</body>
+</html>
