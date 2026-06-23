@@ -1,10 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stone Supplier | Home</title>
-   </head>
+
+    <!-- ✅ PWA: Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- ✅ PWA: Theme color (Android browser bar) -->
+    <meta name="theme-color" content="#ffcc00">
+
+    <!-- ✅ PWA: iOS support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Stone Supplier">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+    <!-- ✅ SEO Meta -->
+    <meta name="description" content="Sai Krushna Stone Suppliers - Top-grade construction materials including aggregates, sand, bricks, cement, murum and more.">
+</head>
 <body>
 <style>
 /* Reset and basic styles */
@@ -14,11 +30,9 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 html, body {
     height: 100%;
 }
-
 /* FULL BODY BACKGROUND */
 body {
     background: url('crusher.jpg') no-repeat center center fixed;
@@ -26,7 +40,6 @@ body {
     color: white;
     line-height: 1.6;
 }
-
 /* NAVBAR */
 nav{
     width: 100%;
@@ -39,37 +52,31 @@ nav{
     top: 0;
     z-index: 100;
 }
-
 nav .logo{
     font-size: 26px;
     font-weight: bold;
 }
-
 nav ul{
     display: flex;
     list-style: none;
 }
-
 nav ul li{
     margin-left: 25px;
 }
-
 nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 18px;
     transition: 0.3s;
 }
-
 nav ul li a:hover,
 nav ul li a.active{
     color: #ffcc00;
 }
-
 /* BANNER / HERO */
 .banner{
     width: 100%;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,17 +85,14 @@ nav ul li a.active{
     padding: 0 20px;
     text-shadow: 2px 2px 10px black;
 }
-
 .banner h1{
     font-size: 50px;
     max-width: 90%;
 }
-
 .banner p{
     font-size: 20px;
     margin-top: 15px;
 }
-
 .banner button{
     margin-top: 20px;
     padding: 14px 35px;
@@ -100,21 +104,18 @@ nav ul li a.active{
     cursor: pointer;
     transition: 0.3s;
 }
-
 .banner button:hover{
     background: #e6b800;
 }
-
 /* CONTENT CONTAINER */
 .container{
     width: 90%;
     max-width: 1100px;
     margin: 40px auto;
-    background: rgba(0,0,0,0.5); /* Dark overlay for readability */
+    background: rgba(0,0,0,0.5);
     padding: 20px 30px;
     border-radius: 10px;
 }
-
 /* FOOTER */
 footer{
     background: rgba(51,51,51,0.8);
@@ -123,7 +124,45 @@ footer{
     padding: 25px 0;
     margin-top: 40px;
 }
+
+/* ✅ PWA Install Banner */
+#install-banner {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffcc00;
+    color: black;
+    padding: 14px 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#install-banner button {
+    background: black;
+    color: #ffcc00;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+#install-banner .close-btn {
+    background: transparent;
+    color: black;
+    font-size: 20px;
+    padding: 0 4px;
+    line-height: 1;
+}
 </style>
+
 <nav>
     <div class="logo">Stone Supplier</div>
     <ul>
@@ -137,14 +176,14 @@ footer{
 </nav>
 
 <section class="banner">
-    <h1>SAI KRUSHNA STONE SUPPLIERS </h1>
+    <h1>SAI KRUSHNA STONE SUPPLIERS</h1>
 </section>
 
 <div class="container">
     <h2 class="title">Welcome to Our Business page</h2>
     <p>
-        We provide top-grade construction materials including aggregates, sand, bricks, 
-        cement, murum, crush sand, and more. We ensure fast delivery and reliable quality 
+        We provide top-grade construction materials including aggregates, sand, bricks,
+        cement, murum, crush sand, and more. We ensure fast delivery and reliable quality
         for all types of construction projects.
     </p>
 </div>
@@ -152,6 +191,57 @@ footer{
 <footer>
     © 2025 Sai Krushna Stone Supplier | All Rights Reserved
 </footer>
+
+<!-- ✅ PWA Install Banner -->
+<div id="install-banner" style="display:none;">
+    📲 Install our App for quick access!
+    <button id="install-btn">Install</button>
+    <button class="close-btn" id="close-banner">✕</button>
+</div>
+
+<!-- ✅ PWA: Register Service Worker + Install Prompt -->
+<script>
+  // Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('[PWA] Service Worker registered:', reg.scope))
+        .catch(err => console.error('[PWA] Service Worker failed:', err));
+    });
+  }
+
+  // Show Install Banner
+  let deferredPrompt;
+  const installBanner = document.getElementById('install-banner');
+  const installBtn = document.getElementById('install-btn');
+  const closeBanner = document.getElementById('close-banner');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBanner.style.display = 'flex'; // Show the banner
+  });
+
+  installBtn.addEventListener('click', async () => {
+    installBanner.style.display = 'none';
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log('[PWA] User choice:', outcome);
+      deferredPrompt = null;
+    }
+  });
+
+  closeBanner.addEventListener('click', () => {
+    installBanner.style.display = 'none';
+  });
+
+  // Hide banner if already installed
+  window.addEventListener('appinstalled', () => {
+    installBanner.style.display = 'none';
+    console.log('[PWA] App installed successfully!');
+  });
+</script>
 
 </body>
 </html>
